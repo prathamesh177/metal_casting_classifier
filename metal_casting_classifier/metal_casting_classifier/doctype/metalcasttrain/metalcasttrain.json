@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-09 18:51:00.521200",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "image",
+  "label",
+  "project",
+  "model_file"
+ ],
+ "fields": [
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "image"
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "label"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "project",
+   "options": "Project"
+  },
+  {
+   "fetch_from": "project.model_file",
+   "fieldname": "model_file",
+   "fieldtype": "Link",
+   "label": "Model File",
+   "options": "File"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-25 12:34:02.011013",
+ "modified_by": "Administrator",
+ "module": "metal_casting_classifier",
+ "name": "metalcasttrain",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

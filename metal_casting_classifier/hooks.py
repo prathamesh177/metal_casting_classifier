@@ -1,9 +1,39 @@
+from castingap import api
+
+
 app_name = "metal_casting_classifier"
 app_title = "metal_casting_classifier"
 app_publisher = "prathamesh walvekar"
 app_description = "metal_casting_classifier"
 app_email = "walvekarprat@gamil.com"
 app_license = "mit"
+
+
+api.include = [
+    "casting_classification.api.upload_image",
+    "casting_classification.api.get_images",
+    "casting_classification.api.train_model",
+    "casting_classification.api.predict"
+]
+
+cors = ["http://localhost:5173"]
+
+def add_cors_headers(response):
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
+
+def apply_cors_middleware(app):
+    @app.after_request
+    def handle_cors(response):
+        return add_cors_headers(response)
+
+hooks = {
+    "after_request": [apply_cors_middleware],  # Apply the CORS middleware globally
+}
+
+
 
 # Apps
 # ------------------
